@@ -6,6 +6,7 @@ import statistics
 import subprocess
 import matplotlib.pyplot as plt
 import datetime
+import numpy
 
 #defining variables for turning the motor
 motor = digitalio.DigitalInOut(board.D18)
