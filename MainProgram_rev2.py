@@ -12,7 +12,7 @@ ads.gain = 1
 tran = AnalogIn(ads, ADS.P0, ADS.P1)
 ref = AnalogIn(ads, ADS.P2, ADS.P3)
 while True:
-    i = input("what would you like to do? (full, turn, voltage, optimize, exit):  ")
+    i = input("what would you like to do? (full, turn, voltage, optimize, exit, time):  ")
     if i == "exit":
         print("goodbye")
         break
@@ -25,12 +25,13 @@ while True:
             print("input not recognized")
         else:
             VincentProgramLib_rev2_dev.manualTurn(d)
-
-
     elif i == "voltage":
         VincentProgramLib_rev2_dev.singleVolt()
     elif i == "optimize":
         VincentProgramLib_rev2_dev.optimize()
+    elif i == "time":
+        VincentProgramLib_rev2_dev.time() #measure voltage as function of time without moving the filter wheel
     else:
         print("input not recognized")
+
 
