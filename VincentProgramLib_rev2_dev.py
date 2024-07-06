@@ -64,6 +64,19 @@ def getVoltage(det):
 def singleVolt():
     print((tran.voltage)/(-0.2269699))
 
+def VvsTime(): #Function to measure the voltage for a pre-determined number of seconds. Nothing will print to the screen while this runs silently. No averaging. 
+    name = input("File Name: ")
+    howlong = int(input("How long do you want to collect data? Enter in seconds. Data will be collected every second."))
+    header = ['seconds','voltage']
+    with open('data/'+name+'.csv', 'w') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(header)
+        for i in range(howlong):
+            v = tran.voltage/(-.2269699)
+            writer.writerow([i,v])
+            time.sleep(1)
+        csvfile.close()
+    print(subprocess.run(["/home/surface/Documents/syncData.sh"], shell=True))
 
 #this function may not have to be used, but it will spin the wheel until an led shines through a hole
 led = digitalio.DigitalInOut(board.D25)
