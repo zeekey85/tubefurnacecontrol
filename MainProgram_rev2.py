@@ -30,7 +30,7 @@ while True:
     elif i == "optimize":
         VincentProgramLib_rev2_dev.optimize()
     elif i == "time":
-        VincentProgramLib_rev2_dev.time() #measure voltage as function of time without moving the filter wheel
+        VincentProgramLib_rev2_dev.VvsTime() #measure voltage as function of time without moving the filter wheel
     else:
         print("input not recognized")
 
